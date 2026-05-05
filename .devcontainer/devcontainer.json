@@ -1,0 +1,51 @@
+{
+  // VS Code Dev Containers configuration for this speckit project. Copied to
+  // {project}/.devcontainer/devcontainer.json on project creation.
+  //
+  // Usage:
+  //   1. Open the project folder in VS Code.
+  //   2. Ctrl+Shift+P → "Dev Containers: Reopen in Container".
+  //   3. VS Code spawns a container from speckit-{project}:latest (the same image
+  //      the speckit agent uses during IMPLEMENTATION / VERIFICATION) and attaches.
+  //   4. You get a full IDE inside the exact env the agent ran in — Node, Python,
+  //      Playwright, etc. all ready to go.
+  //
+  // The image is built by speckit-api on the first IMPLEMENTATION bash call.
+  // If you run "Reopen in Container" before IMPLEMENTATION has ever run for this
+  // project, VS Code will report "image not found" — just run IMPLEMENTATION once
+  // (or manually build: `docker build -t speckit-<folder>:latest .specify/`).
+  //
+  // You can edit this file to add more VS Code extensions, env vars, or port
+  // forwards. The agent does not touch it after initial copy.
+  "name": "speckit-${localWorkspaceFolderBasename}",
+  "image": "speckit-${localWorkspaceFolderBasename}:latest",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "overrideCommand": true,
+  "remoteEnv": {
+    "PLAYWRIGHT_BROWSERS_PATH": "/ms-playwright-browsers"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-playwright.playwright",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "bradlc.vscode-tailwindcss",
+        "golang.go",
+        "rust-lang.rust-analyzer",
+        "redhat.java"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "files.exclude": {
+          "**/.specify": true,
+          "**/specs": false
+        }
+      }
+    }
+  }
+}
