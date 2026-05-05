@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111827;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Visible focus styles without relying on color alone */
+:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+/* Prevent horizontal scroll on long text */
+.pending-item__text {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.notice {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #f59e0b;
+  background: #fffbeb;
+  color: #92400e;
+  border-radius: 8px;
+}
+
+.notice__row {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.notice button {
+  appearance: none;
+  border: 1px solid #d97706;
+  background: #ffffff;
+  color: #92400e;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notice button:hover {
+  background: #fff7ed;
+}
